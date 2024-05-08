@@ -1,0 +1,83 @@
+.experience {
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+}
+
+.experience_list {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  margin: 10px auto;
+  align-items: center;
+}
+
+.experience_item {
+  display: flex;
+  gap: 5px;
+  padding: 20px;
+  justify-content: space-between;
+
+  & > * {
+    width: 30%;
+  }
+
+  width: 100%;
+
+
+  @media (max-width: 600px){
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px;
+    border: 1px solid rgb(146, 146, 146);
+    border-radius: 10px;
+    & > * {
+    width: 100%;
+    }
+  }
+}
+
+.institution {
+  font-weight: bold;
+}
+
+.experience_title {
+  font-weight: bold;
+  color: rgb(50, 50, 50);
+}
+
+.date {
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sertificate {
+  align-self: flex-end;
+}
+
+.col2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+
+

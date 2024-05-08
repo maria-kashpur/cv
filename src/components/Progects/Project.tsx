@@ -1,4 +1,3 @@
-
 import { ProjectData } from "./db/progects";
 import s from "./progects.module.scss";
 
@@ -17,22 +16,25 @@ const CONTENT = {
     ru: "Используемые технологии:",
   },
   github: {
-    en: "View the project on github",
-    ru: "Посмотреть прокт на github",
+    en: "The project on github",
+    ru: "Проект на github",
   },
   deploy: {
-    en: "View deploy of the project",
-    ru: "Посмотреть деплой проекта"
+    en: "Deploy of the project",
+    ru: "Деплой проекта"
   }
 };
 
 export default function Project({data, lang}: Props) {
+
+
+
   return (
     <div className={s.project}>
-      <h4 className={s.project_title}>{data.title[lang]}</h4>
       <div className={s.project_preview}>
         <img src={data.img} alt={data.title.en} />
       </div>
+      <h4 className={s.project_title}>{data.title[lang]}</h4>
       <ul className={s.project_descriptions}>
         <li className={s.description_item}>
           <div className={s.description}>
@@ -48,8 +50,16 @@ export default function Project({data, lang}: Props) {
         </li>
       </ul>
       <div className={s.project_links}>
-        <a className={s.link} href={data.github} target="_blank">{CONTENT.github[lang]}</a>
-        {data.deploy ? <a className={s.link} href={data.deploy} target="_blank">{CONTENT.deploy[lang]} </a> : ''}
+        <a className={s.link} href={data.github} target="_blank">
+          {CONTENT.github[lang]}
+        </a>
+        {data.deploy ? (
+          <a className={s.link} href={data.deploy} target="_blank">
+            {CONTENT.deploy[lang]}{" "}
+          </a>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

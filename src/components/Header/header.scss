@@ -1,19 +1,65 @@
+.header_wrap {
+  background-color: rgb(255, 250, 226);
+  &.scroll {
+    position: sticky;
+    top: 0;
+    z-index: 25;
+    box-shadow: 0px 5px 10px rgb(135, 135, 135);
+    .header {
+      border-bottom: none;
+    }
+  }
+  margin-bottom: 10px;
+}
+
 .header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 1px black solid;
   gap: 20px;
   padding: 10px 0px;
+
+  @media (max-width: 800px) {
+    justify-content: flex-end;
+  }
 }
 
+.nav_wrap {
+  @media (max-width: 800px) {
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      transform: 0.2s ;
+    }
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 65px;
+    height: 100%;
+    width: 100%;
+    background-color: #00000070;
+    &.active .nav{
+        transform: translateX(0%);
+        transition: all 0.5s;
+    }
+
+  }
+}
 
 .nav {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 2em;
+  column-gap: 1em;
   align-items: center;
   justify-content: flex-end;
+
+  @media (max-width: 800px) {
+    overflow: auto;
+    transform: translateX(100%);
+    transition: all 0.5s;
+    flex-direction: column;
+    background-color: rgb(255, 250, 226);
+  }
 }
 
 .settings {
@@ -21,4 +67,69 @@
   align-items: center;
   justify-content: center;
   gap: 1em;
+}
+
+.nav__link {
+  color: rgb(34, 34, 34);
+  font-weight: 600;
+  display: flex;
+  padding: 10px;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  &:hover {
+    transform: scale(1.2);
+  }
+  transition: all ease 0.3s;
+}
+
+.burger {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  border: none;
+  background: transparent;
+  width: 40px;
+  height: 26px;
+  display: none;
+  @media (max-width: 800px) {
+    display: block;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    left: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    background: #000;
+  }
+
+  &::before {
+    top: 0;
+    box-shadow: 0 11px 0 #000;
+    transition: box-shadow 0.3s 0.15s, top 0.3s 0.15s, transform 0.3s;
+  }
+  &::after {
+    bottom: 0;
+    transition: bottom 0.3s 0.15s, transform 0.3s;
+  }
+
+  &.active {
+    &::before {
+      top: 11px;
+      transform: rotate(45deg);
+      box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
+      transition: box-shadow 0.15s, top 0.3s, transform 0.3s 0.15s;
+    }
+    &::after {
+      bottom: 11px;
+      transform: rotate(-45deg);
+      transition: bottom 0.3s, transform 0.3s 0.15s;
+    }
+  }
 }

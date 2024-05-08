@@ -1,11 +1,21 @@
-import './skills.scss'
+import { useInView } from 'react-intersection-observer';
+import s from './skills.module.scss'
+import { links } from '../Header/Header';
+import { useEffect, useLayoutEffect } from 'react';
 
-export default function Skills() {
+const content = {
+  title: {
+    en: "Skills",
+    ru: "Навыки"
+  },
+};
+
+export default function Skills() {  
   return (
-    <section className="col2">
-      <h3>Skills</h3>
+    <section className={s.skills} id={links.skills.id}>
+      <h3 className={s.title}>{content.title.ru}</h3>
       <div>
-        <ul className="skills">
+        <ul className={s.cards}>
           <img
             alt="html5"
             src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"

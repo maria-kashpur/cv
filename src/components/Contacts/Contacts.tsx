@@ -6,6 +6,9 @@ import emailIco from './../../assets/icons/email.svg';
 import linkedinIco from './../../assets/icons/linkedin.svg';
 import discordIco from './../../assets/icons/discord.svg';
 import githubIco from './../../assets/icons/github.svg'
+import { useInView } from 'react-intersection-observer';
+import { useEffect, useLayoutEffect } from 'react';
+import { links } from '../Header/Header';
 
 const mineContacts = [
   {
@@ -37,7 +40,7 @@ const mineContacts = [
 
 export default function Contacts() {
   return (
-    <section className="main_inf">
+    <section className="main_inf" id={links.contacts.id}>
       <div className="person">
         <div className="logo">
           <img src={photo} alt="photo" width={150} />
