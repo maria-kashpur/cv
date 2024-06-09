@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  min-height: calc(100vh - 70px);
 }
 
 .title {
@@ -20,17 +21,20 @@
   flex-direction: column;
   margin: 10px auto;
   align-items: center;
+  border-radius: 10px;
+  color: rgb(0, 0, 0);
+  overflow: hidden;
 }
 
 .experience_item {
-  display: flex;
-  gap: 5px;
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-columns: 0.7fr 0.5fr 1fr;
+  gap: 10px;
   padding: 20px;
-  justify-content: space-between;
-
-  & > * {
-    width: 30%;
-  }
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1000px;
 
   width: 100%;
 
@@ -54,11 +58,9 @@
 
 .experience_title {
   font-weight: bold;
-  color: rgb(50, 50, 50);
+  color: rgb(109, 109, 109);
 }
 
-.date {
-}
 
 .about {
   display: flex;
@@ -68,8 +70,49 @@
   gap: 10px;
 }
 
+.about_content{ 
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.content_item {
+  list-style: none;
+  padding: 0;
+}
+
 .sertificate {
   align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  transition: 0.3s ease;
+  &:before {
+    position: absolute;
+    opacity: 0;
+    top: 0px;
+    left: -5px;
+    z-index: 1;
+    content: "";
+    background: url("../../assets/icons/search.svg") center center / contain no-repeat;
+    width: 20px;
+    height: 20px;
+    transition: 0.3s ease;
+  }
+  &:hover {
+    transition: 0.3s ease;
+    img {
+      transition: 0.3s ease;
+      filter: blur(0.4px);
+    }
+    &::before {
+      opacity: 1;
+      transition: 0.3s ease;
+    }
+  }
 }
 
 .col2 {

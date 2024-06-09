@@ -1,9 +1,12 @@
-import { useContext, useEffect, useRef, useState } from "react";
 import s from "./selectLang.module.scss";
-import arrow from "../../../assets/icons/211687_down_arrow_icon.svg";
-import ru from "../../../assets/icons/ru.png";
-import en from "../../../assets/icons/en.png";
-import { LangContext, LangContextType } from "../../../providers/LangProvider";
+
+import { useContext, useEffect, useRef, useState } from "react";
+import { LangContext, LangContextType } from "../../providers/LangProvider";
+
+import arrow from "./../../assets/icons/211687_down_arrow_icon.svg";
+import ru from "./../../assets/icons/ru.png";
+import en from "./../../assets/icons/en.png";
+import Arrow from "../icons/Arrow/Arrow";
 
 const data: { [key: string]: { value: LangContextType, ico: string } } = {
   ru: {
@@ -26,7 +29,6 @@ export default function SelectLang() {
       className={s.langItem}
       key={el.value}
       onClick={() => {
-        console.log("click")
         if (!setLang) return;
         setLang(() => el.value);
         setIsLangOpen(false);
@@ -60,9 +62,8 @@ export default function SelectLang() {
     <div className={s.lang} ref={langRef}>
       <div className={s.value} onClick={() => setIsLangOpen(!isLangOpen)}>
         <span className={s.flag}>{data[lang].value}</span>
-        <img src={data[lang].ico} alt={`language`} className={s.flag} />
         <span className={`${s.arrow} ${isLangOpen ? s.active : ""}`}>
-          <img src={arrow} width={10} alt="arrow" />
+         <Arrow height={10} width={10} color="var(--color)"/>
         </span>
       </div>
 

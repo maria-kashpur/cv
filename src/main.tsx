@@ -1,13 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './components/App/App.tsx'
-import './styles/index.scss'
-import LangProvider from './providers/LangProvider.tsx';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Layout from "./components/App/Layout.tsx";
+import "./styles/index.scss";
+import LangProvider from "./providers/LangProvider.tsx";
+import { RouterProvider } from "react-router-dom";
+import router from "./utils/router.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <LangProvider>
-      <App />
+      <RouterProvider router={router} />
     </LangProvider>
   </React.StrictMode>
 );

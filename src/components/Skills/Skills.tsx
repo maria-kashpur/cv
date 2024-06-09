@@ -1,136 +1,61 @@
-import { useInView } from 'react-intersection-observer';
-import s from './skills.module.scss'
-import { links } from '../Header/Header';
-import { useEffect, useLayoutEffect } from 'react';
+import s from "./skills.module.scss";
 
-const content = {
+import { useContext } from "react";
+import { LangContext } from "../../providers/LangProvider";
+
+import DoneIco from "../../assets/icons/9075822_approved_approval_done_tick_accepted_icon.svg?react";
+
+const CONTENT = {
   title: {
     en: "Skills",
-    ru: "Навыки"
+    ru: "Навыки",
+  },
+  skills: {
+    en: [
+      "HTML5, CSS3, SASS",
+      "Semantic, responsive web design",
+      "Pixel-perfect layout according to designs using Figma, Pixso",
+      "Layout using BEM methodology",
+      "JavaScript, TypeScript",
+      "React",
+      "NextJS",
+      "Redux Toolkit",
+      "Writing tests using Jest, Vitest, React Testing Library",
+      "Ability to work with bundlers (Webpack, Vite), integrate ESLint, Prettier, Husky, and other tools for development automation",
+      "Experience with version control system Git and GitHub platform for collaborative project work",
+      "Skills in working with NodeJS, Express, NestJS, WebSocket, Docker for server-side development and application containerization",
+    ],
+    ru: [
+      "HTML5, CSS3, SASS",
+      "Семантическая, адаптивная верстка",
+      "Pixel perfect верстка по макетам с использованием Figma, Pixso",
+      "Верстка с использованием BEM",
+      "JavaScript, TypeScript",
+      "React",
+      "NextJS",
+      "Redux Toolkit",
+      "Написание тестов с использованием Jest, Vitest, React Testing Library",
+      "Умение работать со сборщиками (Webpack, Vite), подключать ESLint, Prettier, Husky и другие инструменты для автоматизации процесса разработки",
+      "Опыт работы с системой контроля версий Git и платформой GitHub для совместной работы над проектами",
+      "Навыки работы с NodeJS, Express, NestJS, WebSocket, Docker для разработки серверной части и контейнеризации приложений",
+    ],
   },
 };
 
-export default function Skills() {  
+export default function Skills() {
+  const { lang } = useContext(LangContext);
+
   return (
-    <section className={s.skills} id={links.skills.id}>
-      <h3 className={s.title}>{content.title.ru}</h3>
+    <section className={s.skills}>
+      <h3 className={s.title}>{CONTENT.title[lang]}</h3>
       <div>
         <ul className={s.cards}>
-          <img
-            alt="html5"
-            src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"
-            height="40"
-          />
-          <img
-            alt="css3"
-            src="https://img.shields.io/badge/CSS3-1572b6.svg?style=for-the-badge&logo=CSS3&logoColor=white"
-            height="40"
-          />
-          <img
-            alt="SASS"
-            src="https://img.shields.io/badge/Sass-CC6699.svg?style=for-the-badge&logo=Sass&logoColor=white"
-            height="40"
-          />
-          <img
-            alt="BEM"
-            src="https://img.shields.io/badge/BEM-000000.svg?style=for-the-badge&logo=BEM&logoColor=white"
-            height="40"
-          />
-          <img
-            alt="js"
-            src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black"
-            height="40"
-          />
-          <img
-            alt="typescript"
-            src="https://img.shields.io/badge/typescript-3178C6.svg?style=for-the-badge&logo=typescript&logoColor=white"
-            height="40"
-          />
-          <img
-            alt="react"
-            src="https://img.shields.io/badge/react-61DAFB.svg?style=for-the-badge&logo=react&logoColor=black"
-            height="40"
-          />
-          <img
-            alt="redux"
-            src="https://img.shields.io/badge/redux-764ABC.svg?style=for-the-badge&logo=redux&logoColor=white"
-            height="40"
-          />
-          <img
-            alt="reacthookform"
-            src="https://img.shields.io/badge/react%20hook%20form-EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white"
-            height="40"
-          />
-          <img
-            alt="reactrouter"
-            src="https://img.shields.io/badge/react%20router-CA4245.svg?style=for-the-badge&logo=reactrouter&logoColor=white"
-            height="40"
-          />
-          <img
-            alt="jest"
-            src="https://img.shields.io/badge/next.js-000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white"
-            height="40"
-          />
-          <img
-            alt="figma"
-            src="https://img.shields.io/badge/figma-F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white"
-            height="40"
-          />
-          <img
-            alt="npm"
-            src="https://img.shields.io/badge/npm-CB3837.svg?style=for-the-badge&logo=npm&logoColor=white"
-            height="40"
-          />
-          <img
-            alt="webpack"
-            src="https://img.shields.io/badge/webpack-8DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black"
-            height="40"
-          />
-          <img
-            alt="vite"
-            src="https://img.shields.io/badge/vite-646CFF.svg?style=for-the-badge&logo=vite&logoColor=white"
-            height="40"
-          />
-          <img
-            alt="git"
-            src="https://img.shields.io/badge/git-F05032.svg?style=for-the-badge&logo=git&logoColor=white"
-            height="40"
-          />
-          <img
-            alt="vitest"
-            src="https://img.shields.io/badge/vitest-6E9F18.svg?style=for-the-badge&logo=vitest&logoColor=white"
-            height="40"
-          />
-          <img
-            alt="jest"
-            src="https://img.shields.io/badge/jest-C21325.svg?style=for-the-badge&logo=jest&logoColor=white"
-            height="40"
-          />
-          <img
-            alt="firebase"
-            src="https://img.shields.io/badge/firebase-FFCA28.svg?style=for-the-badge&logo=firebase&logoColor=black"
-            height="40"
-          />
-          <img
-            alt="vscode"
-            src="https://img.shields.io/badge/visual%20studio%20code-007ACC.svg?style=for-the-badge&logo=visualstudiocode&logoColor=white"
-            height="40"
-          />
-          <img
-            alt="sublimetext"
-            src="https://img.shields.io/badge/sublime%20text-FF9800.svg?style=for-the-badge&logo=sublimetext&logoColor=white"
-            height="40"
-          />
-          <img
-            alt="eslint"
-            src="https://img.shields.io/badge/ESLint-4B32C3.svg?style=for-the-badge&logo=eslint&logoColor=white"
-            height="40"
-          />
-          <img
-            alt="prettier"
-            src="https://img.shields.io/badge/prettier-F7B93E.svg?style=for-the-badge&logo=prettier&logoColor=black"
-            height="40"
-          />
+          {CONTENT.skills[lang].map((el, i) => (
+            <li key={i}>
+              <DoneIco height={25} />
+              <span>{el}</span>
+            </li>
+          ))}
         </ul>
       </div>
     </section>

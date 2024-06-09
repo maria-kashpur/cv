@@ -1,0 +1,32 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 600px;
+
+  border: 3px rgb(0, 0, 0) solid;
+  border-radius: 30px;
+
+  color: black;
+  background-color: rgb(255, 254, 254);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: inherit;
+
+  img {
+    height: 30px;
+  }
+}
+
+a.link:hover {
+  color: rgb(47, 52, 207);
+  transition: 0.3s ease;
+}

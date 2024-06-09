@@ -1,63 +1,41 @@
-import "./header.scss";
-import printIco from "./../../assets/icons/print.svg";
-import SelectLang from "./SelectLang/SelectLang";
+import s from "./header.module.scss";
+
 import { LangContext } from "../../providers/LangProvider";
 import { useContext, useLayoutEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
-export const links = {
-  contacts: {
-    title: {
-      ru: "Контакты",
-      en: "Contacts",
-    },
-    id: "contacts",
-  },
-  about: {
-    title: {
-      ru: "Обо мне",
-      en: "About me",
-    },
-    id: "about",
-  },
-  skills: {
-    title: {
-      ru: "Навыки",
-      en: "Skills",
-    },
-    id: "skills",
-  },
-  aducation: {
-    title: {
-      ru: "Образование и опыт",
-      en: "Aducation",
-    },
-    id: "aducation",
-  },
+import SelectLang from "./../SelectLang/SelectLang";
+import BtnDarkMode from "../BtnDarkMode/BtnDarkMode";
 
-  projects: {
+export const links = [
+  {
+    title: {
+      ru: "Главная",
+      en: "Main",
+    },
+    to: "/",
+  },
+  {
     title: {
       ru: "Проекты",
       en: "Progects",
     },
-    id: "projects",
+    to: "/projects",
   },
-};
+  {
+    title: {
+      ru: "Контакты",
+      en: "Contacts",
+    },
+    to: "/contacts",
+  },
+];
+
 
 export default function Header() {
   const { lang } = useContext(LangContext);
   const [fixHeader, setFixHeader] = useState(false);
-  const [activeLink, setActiveLink] = useState<string | null>(null);
   const [burgerActive, setBurgerActive] = useState(false)
-
-  const scrollBySection = (id: string) => {
-    const el = document.getElementById(id)
-    if (!el) return;
-    window.scroll({
-      top: el.offsetTop - 80,
-      left: 0,
-      behavior: "smooth",
-    });
-  }
 
   useLayoutEffect(() => {
     const scroll = () => {
@@ -69,42 +47,26 @@ export default function Header() {
     return () => removeEventListener("scroll", scroll);
   });
 
-  useLayoutEffect(() => {
-    const changeAncore = () => {
-      const { hash } = location;
-      setActiveLink(hash)
-      
-    }
-    window.addEventListener("hashchange", changeAncore)
-    return () => removeEventListener("scroll", changeAncore);
-  })
-
   return (
-    <header className={`header_wrap ${fixHeader ? "scroll" : ""}`}>
+    <header className={`${s.header_wrap} ${fixHeader ? s.scroll : ""}`}>
       <div className="conteiner">
-        <div className="header">
-          <nav className={`nav_wrap ${burgerActive ? "active" : ""}`}>
-            <ul className="nav">
+        <div className={s.header}>
+          <nav className={`${s.nav_wrap} ${burgerActive ? s.active : ""}`}>
+            <ul className={s.nav}>
               {Object.values(links).map((link, i) => (
                 <li key={i}>
-                  <button
-                    className={`nav__link ${
-                      activeLink === `#${link.id}` ? "active" : ""
-                    }`}
-                    onClick={() => scrollBySection(link.id)}>
+                  <NavLink to={link.to} className={s.nav__link}>
                     {link.title[lang]}
-                  </button>
+                  </NavLink>
                 </li>
               ))}
             </ul>
           </nav>
-          <div className="settings">
+          <div className={s.settings}>
             <SelectLang />
-            <div className="print_ico">
-              <img src={printIco} alt="print" height="30" />
-            </div>
+            <BtnDarkMode />
             <div
-              className={`burger ${burgerActive ? "active" : ""}`}
+              className={`${s.burger} ${burgerActive ? s.active : ""}`}
               onClick={() => setBurgerActive((prev) => !prev)}></div>
           </div>
         </div>

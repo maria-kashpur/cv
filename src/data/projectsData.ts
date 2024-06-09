@@ -1,4 +1,12 @@
+import shelterImg from "./../assets/projects/shelter.webp";
+import virtualKeyboardImg from "./../assets/projects/virtual-keyboard.webp";
+import graphQLImg from "./../assets/projects/graphQL.webp";
+import minesweeperImg from "./../assets/projects/minesweeper.webp"
+import selectorImg from "./../assets/projects/rs-css.webp"
+import asyncRaceImg from "./../assets/projects/race.webp"
+
 export interface ProjectData {
+  id: string;
   title: {
     en: string;
     ru: string;
@@ -13,15 +21,9 @@ export interface ProjectData {
   deploy: string | null;
 }
 
-import minesweeperImg from "../../../../public/projects/minesweeper.webp"
-import virtualKeyboardImg from '../../../../public/projects/virtual-keyboard.webp'
-import graphQLImg from '../../../../public/projects/graphQL.webp'
-import rsCssImg from '../../../../public/projects/rs-css.webp'
-import shelterImg from '../../../../public/projects/shelter.webp'
-import raceImg from '../../../../public/projects/race.webp'
-
 const PROJECTS: ProjectData[] = [
   {
+    id: "minesweeper",
     title: {
       en: "Minesweeper",
       ru: "Сапер",
@@ -36,6 +38,7 @@ const PROJECTS: ProjectData[] = [
     deploy: "https://maria-kashpur.github.io/minesweeper/",
   },
   {
+    id: "virtual_keyboard",
     title: {
       en: "Virtual keyboard",
       ru: "Виртуальная клавиатура",
@@ -50,6 +53,7 @@ const PROJECTS: ProjectData[] = [
     deploy: "https://maria-kashpur.github.io/virtual-keyboard/",
   },
   {
+    id: "app_graphQL_queries",
     title: {
       en: "Application for GraphQL queries",
       ru: "Приложение для GraphQL запросов",
@@ -64,6 +68,7 @@ const PROJECTS: ProjectData[] = [
     deploy: "https://codehub-graphiql-app.netlify.app/",
   },
   {
+    id: "css_selector_trainer",
     title: {
       en: "CSS Selector Trainer",
       ru: "Тренажер для изучения СSS селекторов",
@@ -73,11 +78,12 @@ const PROJECTS: ProjectData[] = [
       ru: `Интерактивный тренажер, созданный для изучения CSS селекторов. Проект включает в себя несколько игровых уровней, каждый из которых представляет собой вёрстку HTML и задание на написание соответствующего CSS-селектора.`,
     },
     tools: `Webpack, TypeScript, SCSS, HTML5`,
-    img: rsCssImg,
+    img: selectorImg,
     github: "https://github.com/maria-kashpur/rs-css",
     deploy: "https://maria-kashpur.github.io/rs-css/",
   },
   {
+    id: "shelter",
     title: {
       en: "Shelter",
       ru: "Приют",
@@ -92,6 +98,7 @@ const PROJECTS: ProjectData[] = [
     deploy: "https://maria-kashpur.github.io/shelter/index.html",
   },
   {
+    id: "async_race",
     title: {
       en: "Async Race",
       ru: "Асинхронная гонка",
@@ -101,10 +108,14 @@ const PROJECTS: ProjectData[] = [
       ru: `Проект представляет собой виртуальные гоночные соревнований между автомобилями.`,
     },
     tools: `Vite, TypeScript, SCSS, HTML5`,
-    img: raceImg,
+    img: asyncRaceImg,
     github: "https://github.com/maria-kashpur/async-race",
     deploy: null,
   },
 ];
+
+export const PROJECTS_MAP = PROJECTS.reduce((acc, el) => {
+  return acc.set(el.id, el)
+}, new Map())
 
 export default PROJECTS;

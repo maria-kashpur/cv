@@ -1,27 +1,5 @@
 @import "./normalize.scss";
-
-// :root {
-//   --bg-color: #1d1d1f;
-//   --bg-color-overlay: #5c5e5e89;
-//   --main-text-color: #fbd604;
-//   --disabled-color: #575757;
-//   --light-color: #fff;
-//   --dark-color: #1b1a1a;
-//   --gold-color: #d4af37;
-
-//   // --bg-color-header: #1c0909;
-//   --bg-color-header: #191b1e;
-//   --a-hover-default-color: #f8e265;
-
-//   --main-font-size: 14px;
-//   --maint-font-family: 'Roboto', system-ui, Avenir, Helvetica, Arial, sans-serif;
-//   --main-line-height: auto;
-//   --main-font-weight: auto;
-//   --max-content-width: 1280px;
-//   --max-content-padding: 0px 15px;
-
-//   --text2-font-family: 'Knewave', cursive;
-// }
+@import "./variables.scss";
 
 *,
 *::before,
@@ -29,8 +7,6 @@
   padding: 0;
   margin: 0;
   border: 0;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -43,12 +19,7 @@ a,
 a:visited,
 a:hover {
   text-decoration: inherit;
-  // color: inherit;
 }
-
-// a:hover {
-//   color: inherit;
-// }
 
 input,
 button,
@@ -76,17 +47,20 @@ body {
   min-height: 100vh;
   padding: 0;
   margin: 0;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: rgb(255 250 226 / 63%);
+
+  background-color: var(--bg);
+  color: var(--color);
 
   font-size: 18px;
-  color: rgb(0, 0, 0);
 }
 
 #root {
   min-height: 100vh;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -102,50 +76,26 @@ main {
   margin: 0px auto;
   box-sizing: border-box;
   width: 100%;
-  padding: 5px;
+  padding: 0px 10px;
 }
 
 h1 {
   font-size: 2em;
+
   margin: 5px 0px;
 }
 
-.logo {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  overflow: hidden;
+.projectPage {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  img {
-    width: 100%;
-    object-fit: cover;
+  justify-content: space-between;
+  gap: 20px;
+  @media (max-width: 650px) {
+    flex-wrap: wrap;
   }
 }
 
-.col2 {
-  margin: 1em;
-  padding: 0.5em;
-  display: flex;
+.title {
+  margin: 30px auto;
 
-  &:first-of-type {
-    background-color: rgb(255 219 180);
-  }
-
-  border-radius: 30px 0px;
-
-  h3 {
-    flex: 0 0 10em;
-    font-size: 1.2em;
-  }
+  text-align: center;
 }
-
-
-
-// main {
-//   display: flex;
-//   flex-direction: column;
-//   gap: 2em;
-// }
