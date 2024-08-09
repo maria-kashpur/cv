@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { Outlet } from "react-router-dom";
+import React from "react";
 
 import { LangContext } from "../../../../providers/LangProvider";
 import Projects from "../../../Progects/Projects";
@@ -11,7 +12,7 @@ const CONTENT = {
   },
 };
 
-export default function ProjectsPage() {
+const ProjectsPage = () => {
   const { lang } = useContext(LangContext);
 
   return (
@@ -24,3 +25,5 @@ export default function ProjectsPage() {
     </div>
   );
 }
+
+export default ProjectsPage;

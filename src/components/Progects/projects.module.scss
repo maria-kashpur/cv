@@ -24,7 +24,7 @@
     font-size: 15px;
     min-height: 220px;
     &:hover {
-      box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.768);
+      box-shadow: 3px 3px 10px var(--box-shadow-color);
     }
   }
 
@@ -84,7 +84,7 @@
     text-align: center;
 
     &.active, &:hover {
-      box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.768);
+      box-shadow: 3px 3px 10px var(--box-shadow-color);
     }
   }
 

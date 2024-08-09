@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 
 import SelectLang from "./../SelectLang/SelectLang";
 import BtnDarkMode from "../BtnDarkMode/BtnDarkMode";
+import React from "react";
 
 export const links = [
   {
@@ -32,7 +33,7 @@ export const links = [
 ];
 
 
-export default function Header() {
+const Header = () => {
   const { lang } = useContext(LangContext);
   const [fixHeader, setFixHeader] = useState(false);
   const [burgerActive, setBurgerActive] = useState(false)
@@ -74,3 +75,5 @@ export default function Header() {
     </header>
   );
 }
+
+export default Header;

@@ -35,8 +35,19 @@ $themes: (
     "dark": rgb(133, 132, 246),
     "light": rgb(44, 42, 187),
   ),
+  --btn-bg-hover: (
+    "dark": rgb(133, 132, 246),
+    "light": rgb(0, 0, 0),
+  ),
+  --btn-color: (
+    "dark": rgb(255, 255, 255),
+    "light": black,
+  ),
 
-
+  --box-shadow-color: (
+    "dark": rgba(255, 255, 255, 0.768),
+    "light": rgba(0, 0, 0, 0.391),
+  ),
 
   --welcom-bgcolor: (
     "dark":

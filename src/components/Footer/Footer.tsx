@@ -1,8 +1,9 @@
 import s from "./footer.module.scss";
 
 import contactsData from "../../data/contactsData";
+import React from "react";
 
-export default function Footer() {
+const Footer = () => {
   return (
     <div className="conteiner">
       <footer className={s.footer}>
@@ -18,3 +19,5 @@ export default function Footer() {
     </div>
   );
 }
+
+export default React.memo(Footer);

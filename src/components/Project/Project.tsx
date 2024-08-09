@@ -1,8 +1,9 @@
 import s from "./project.module.scss"
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import { PROJECTS_MAP, ProjectData } from '../../data/projectsData';
 import CloseIco from "../../assets/icons/9104213_close_cross_remove_delete_icon.svg?react"
+import { LangContext } from "../../providers/LangProvider";
 
 const CONTENT = {
   title: {
@@ -21,13 +22,17 @@ const CONTENT = {
     en: "Deploy of the project",
     ru: "Деплой проекта",
   },
+  project: {
+    en: "Project",
+    ru: "Проект",
+  },
 };
 
 export default function Project() {
   const { id } = useParams();
   const [data, setData] = useState<null | ProjectData>(null);
   const navigate = useNavigate();
-  const lang = "ru";
+  const { lang } = useContext(LangContext);
 
   useEffect(() => {
     if (PROJECTS_MAP.has(id)) {
@@ -45,7 +50,7 @@ export default function Project() {
         onClick={() => navigate("/projects")}>
         <CloseIco />
       </button>
-      <h4 className={s.project_title}>Проект "{data?.title[lang]}"</h4>
+      <h4 className={s.project_title}>{CONTENT.project[lang]} "{data?.title[lang]}"</h4>
       <div className={s.project_preview}>
         <img src={data?.img} alt={data?.title.en} />
       </div>

@@ -52,15 +52,15 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  border: 1px solid var(--btn-color);
   padding: 10px;
   width: 155px;
-  color: black;
+  color: var(--btn-color);
   border-radius: 10px;
   transition: 0.5s ease;
   text-align: center;
   &:hover {
-    background: black;
+    background: var(--btn-bg-hover);
     color: white;
   }
 }
