@@ -38,7 +38,7 @@ export default function Welcome() {
         </h2>
         <h3 className={s.welcome__prof}>{content.prof[lang]}</h3>
         <p className={s.welcome__slogan}>{content.slogan[lang]}</p>
-        <a href="./cv/cv(ru).pdf" className={s.btn} download={true}>
+        <a href={`./cv/cv(${lang}).pdf`} className={s.btn} download={true}>
           {content.download[lang]}
         </a>
       </div>
