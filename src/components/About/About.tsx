@@ -13,13 +13,11 @@ const content = {
   content: {
     ru: [
       "Амбициозный начинающий frontend разработчик. Наслаждаюсь возможностью воплотить свои идеи в работающее приложение и видеть результат своего труда.",
-      "Обучалась в The Rolling Scopes School, где посвятила более года изучению фронтенд-разработки, а также немного погрузилась в серверную разработку на NodeJS. Этот опыт был для меня не только уникальным обучающим процессом, но и возможностью погрузиться в профессиональную среду и командную работу.",
-      "Всегда открыта к новым вызовам и знаниям.",
+      "Своим главным инструментом во frontend разработке я считаю React, стараясь наиболее полно погружаться в эту технологию. Однако, не в моей привычке оставаться на достигнутом, поэтому в свободное время я активно расширяю свой кругозор в мире программирования.",
     ],
     en: [
       "I'm a junoir frontend developer. I enjoy the opportunity to translate my ideas into a working application and see the result of my work.",
-      "I studied at The Rolling Scopes School, where I dedicated over a year to learning frontend development and also delved into server-side development with NodeJS. This experience was not only a unique learning process for me, but also an opportunity to immerse myself in a professional environment and teamwork.",
-      "I am always open to new challenges and knowledge.",
+      "My main focus in frontend development is React, and I strive to immerse myself fully in this technology. However, I am not accustomed to resting on my laurels, so in my free time, I actively broaden my horizons in the world of programming.",
     ],
   },
 };
