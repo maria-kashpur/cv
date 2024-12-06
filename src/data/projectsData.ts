@@ -1,9 +1,10 @@
 import shelterImg from "./../assets/projects/shelter.webp";
 import virtualKeyboardImg from "./../assets/projects/virtual-keyboard.webp";
 import graphQLImg from "./../assets/projects/graphQL.webp";
-import minesweeperImg from "./../assets/projects/minesweeper.webp"
-import selectorImg from "./../assets/projects/rs-css.webp"
-import asyncRaceImg from "./../assets/projects/race.webp"
+import minesweeperImg from "./../assets/projects/minesweeper.webp";
+import selectorImg from "./../assets/projects/rs-css.webp";
+import asyncRaceImg from "./../assets/projects/race.webp";
+import christmasShopImg from "./../assets/projects/christmas-shop.webp"
 
 export interface ProjectData {
   id: string;
@@ -111,6 +112,21 @@ const PROJECTS: ProjectData[] = [
     img: asyncRaceImg,
     github: "https://github.com/maria-kashpur/async-race",
     deploy: null,
+  },
+  {
+    id: "christmas-shop",
+    title: {
+      en: "Christmas Shop",
+      ru: "Рождественский магазин",
+    },
+    about: {
+      en: `Two-page website with a Christmas theme. The project implements a carousel, a modal window with dynamic content, and a counter until the New Year.`,
+      ru: `Двустраничный сайт на рождественскую тематику. В проекте реализованы карусель, модальное окно с динамическим контентом, счетчик до Нового года.`,
+    },
+    tools: `Vite, TypeScript, SCSS, HTML5, Vue.js`,
+    img: christmasShopImg,
+    github: "https://github.com/maria-kashpur/christmas-shop",
+    deploy: "https://maria-kashpur.github.io/christmas-shop/",
   },
 ];
 
