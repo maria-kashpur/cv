@@ -40,7 +40,7 @@ export default function Project() {
     } else {
       navigate("/");
     }
-  }, [id]);
+  }, [id, navigate]);
 
   
   return (

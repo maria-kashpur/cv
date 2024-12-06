@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Layout from "./components/App/Layout.tsx";
 import "./styles/index.scss";
 import LangProvider from "./providers/LangProvider.tsx";
 import { RouterProvider } from "react-router-dom";

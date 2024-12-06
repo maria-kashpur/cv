@@ -6,9 +6,8 @@ import { NavLink } from "react-router-dom";
 
 import SelectLang from "./../SelectLang/SelectLang";
 import BtnDarkMode from "../BtnDarkMode/BtnDarkMode";
-import React from "react";
 
-export const links = [
+const links = [
   {
     title: {
       ru: "Главная",

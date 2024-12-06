@@ -3,7 +3,6 @@ import s from "./selectLang.module.scss";
 import { useContext, useEffect, useRef, useState } from "react";
 import { LangContext, LangContextType } from "../../providers/LangProvider";
 
-import arrow from "./../../assets/icons/211687_down_arrow_icon.svg";
 import ru from "./../../assets/icons/ru.png";
 import en from "./../../assets/icons/en.png";
 import Arrow from "../icons/Arrow/Arrow";
