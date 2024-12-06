@@ -1,0 +1,32 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 10px;
+}
+
+.footer_links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  
+  filter: var(--footer-invert);
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    &:hover {
+      transform: scale(1.2);
+      transition: 0.3 ease;
+    }
+  }
+}

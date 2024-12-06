@@ -1,0 +1,93 @@
+@use "sass:map";
+
+$themes: (
+  --bg: (
+    "dark": rgba(20, 20, 22, 0.929),
+    "light": rgb(243, 244, 254),
+  ),
+
+  --color: (
+    "dark": rgb(255, 255, 255),
+    "light": rgb(0, 0, 0),
+  ),
+
+  --header-bgcolor: (
+    "dark": rgb(0, 0, 0),
+    "light": rgb(255, 255, 255),
+  ),
+
+  --header-shadow: (
+    "dark": 0px 5px 10px rgb(135, 135, 135),
+    "light": 0px 5px 10px rgb(9, 9, 9),
+  ),
+
+  --header_nav_wrap-bgcolor: (
+    "dark": rgba(51, 51, 51, 0.627),
+    "light": rgba(51, 51, 51, 0.627),
+  ),
+
+  --burger-color: (
+    "dark": rgb(255, 255, 255),
+    "light": rgb(0, 0, 0),
+  ),
+
+  --link-active: (
+    "dark": rgb(133, 132, 246),
+    "light": rgb(44, 42, 187),
+  ),
+  --btn-bg-hover: (
+    "dark": rgb(133, 132, 246),
+    "light": rgb(0, 0, 0),
+  ),
+  --btn-color: (
+    "dark": rgb(255, 255, 255),
+    "light": black,
+  ),
+
+  --box-shadow-color: (
+    "dark": rgba(255, 255, 255, 0.768),
+    "light": rgba(0, 0, 0, 0.391),
+  ),
+
+  --welcom-bgcolor: (
+    "dark":
+      radial-gradient(circle, rgba(31, 49, 156, 1) 24%, rgba(0, 0, 0, 1) 100%),
+    "light":
+      radial-gradient(
+        circle,
+        rgba(174, 131, 231, 1) 0%,
+        rgba(97, 89, 146, 1) 42%,
+        rgba(71, 75, 117, 1) 56%,
+        rgba(71, 75, 117, 1) 85%
+      ),
+  ),
+
+  --welcom-color: ("dark": rgb(255, 255, 255), "light": rgb(0, 0, 0)),
+
+  --welcome-color-2: ("dark": rgb(92 236 234), "light": rgb(255, 255, 255)),
+
+  --welcome-color-bnt: ("dark": rgb(0, 0, 0), "light": rgb(0, 0, 0)),
+
+  --color-project-border: ("dark": rgb(255, 255, 255), "light": rgb(0, 0, 0)),
+
+  --bg-project-card-color: ("dark": rgb(0, 0, 0), "light": rgb(255, 255, 255)),
+
+  --shadow-color-project-card: ("dark": rgba(255, 255, 255, 0.768), "light": rgba(255, 255, 255, 0.768)),
+
+  --footer-invert: ("dark": invert(1), "light": invert(0)),
+  );
+
+@mixin theme($value) {
+  @each $name, $property in $themes {
+    #{$name}: #{map.get($themes, $name, $value)};
+  }
+}
+
+body[data-theme="dark"],
+body {
+  @include theme("dark");
+}
+
+body[data-theme="light"] {
+  @include theme("light");
+}

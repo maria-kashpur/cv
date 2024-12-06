@@ -1,0 +1,80 @@
+.lang {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: rgb(255, 255, 255);
+
+  &:hover .value .arrow{
+    opacity: 1;
+  }
+}
+
+.value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  vertical-align: middle;
+  cursor: pointer;
+  color: var(--color);
+}
+
+.flag {
+  width: 25px;
+  position: relative;
+  transition: all 0.5s;
+  color: inherit;
+  text-transform: uppercase;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+  &.active {
+   transform: rotate3d(1, 0, 0, 180deg);;
+  } 
+  opacity: 0;
+}
+
+.langList {
+  position: absolute;
+  z-index: 100;
+  border: 1px solid transparent;
+  overflow: hidden;
+  border-radius: 10px;
+  top: 40px;
+  right: 0px;
+  width: 100px;
+}
+
+.langItem{ 
+    display: flex;
+    text-align: center;
+    justify-content:space-between;
+    background-color: rgba(0, 0, 0, 0.693);
+    padding: 15px;
+    gap: 10px;
+    @keyframes open {
+      0% {opacity: 0};
+      100% {opacity: 1}
+    }
+    animation: open 0.4s ease;
+
+    &:hover {
+      background-color: rgb(0, 0, 0, 0.9);
+      cursor: pointer;
+    }
+    .langName{
+      text-transform: uppercase;
+      width: 30px;
+      &.current {
+        font-weight: 800;
+      }
+    }
+    .langFlag {
+      width: 20px;
+    }
+  }

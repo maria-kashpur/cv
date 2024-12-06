@@ -1,0 +1,136 @@
+.welcome {
+  padding: 40px 0;
+  height: calc(100vh - 70px);
+  min-height: 695px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--welcom-bgcolor);
+  background: var(--welcom-bgcolor),
+    url("./../../assets/img/header-bg.png") center center / contain no-repeat;
+
+  color: var(--welcom-color);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    transform: rotate(180deg);
+    width: 100%;
+    height: 100%;
+    background: url("./../../assets/img/header-bg.png") center center / contain
+      no-repeat;
+    animation: 100s linear 0s normal none infinite running rot;
+
+    @keyframes rot {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    @-webkit-keyframes rot {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
+
+.welcome_wrap {
+  padding: 0 15px;
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 40px;
+  @media (max-width: 800px) {
+    font-size: 30px;
+  }
+  @media (max-width: 500px) {
+    font-size: 20px;
+  }
+}
+
+.welcome__name {
+  color: (var(--welcome-color-2));
+}
+
+.welcome__prof {
+  font-size: 0.8em;
+}
+
+.welcome__slogan {
+  font-style: italic;
+  font-size: 0.6em;
+  margin: 10px auto;
+}
+
+.btn {
+  position: relative;
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 12px 28px;
+
+  border-radius: 10px;
+  background-color: var(--welcome-color-2);
+  color: var(--welcome-color-bnt);
+  letter-spacing: 0.15px;
+  font-size: 18px;
+  font-weight: 600;
+
+  transition: opacity 0.2s ease-in;
+
+  @media (max-width: 500px) {
+    font-size: 14px;
+  }
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn:active {
+  position: relative;
+  top: 1px;
+}
+
+/* Btn outline */
+
+.btn-outline {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+
+  height: 48px;
+  padding: 12px 20px;
+
+  border-radius: 5px;
+  border: 1px solid #000;
+  background-color: #fff;
+  color: #000;
+
+  transition: opacity 0.2s ease-in;
+}
+
+.btn-outline:hover {
+  opacity: 0.8;
+}
+
+.btn-outline:active {
+  position: relative;
+  top: 1px;
+}

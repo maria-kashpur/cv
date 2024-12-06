@@ -1,0 +1,73 @@
+$sm: 700px;
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+  min-height: calc(100vh - 70px);
+
+  background: url("./../../assets/img/pngwing.com.png") center center/ contain
+    no-repeat;
+}
+
+.photo {
+  flex-shrink: 0;
+
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+
+  margin: 20px auto;
+
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  @media (max-width: $sm) {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  text-align: justify;
+}
+
+.image {
+  margin: 0 auto;
+  flex: 1 0 30%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
