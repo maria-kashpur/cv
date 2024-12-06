@@ -1,30 +1,18 @@
-# React + TypeScript + Vite
+# CV
+Этот проект представляет собой мое онлайн-резюме, где можно найти информацию обо мне, моем обучении и выполненных проектах. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Ссылка на деплой: 
+https://maria-kashpur.github.io/cv/
 
-Currently, two official plugins are available:
+## Используемые технологии:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<img alt="vite" src="https://img.shields.io/badge/vite-646CFF.svg?style=for-the-badge&logo=vite&logoColor=white" height="40"/>
 
-## Expanding the ESLint configuration
+<img alt="typescript" src="https://img.shields.io/badge/typescript-3178C6.svg?style=for-the-badge&logo=typescript&logoColor=white" height="40"/>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<img alt="SASS" src="https://img.shields.io/badge/Sass-CC6699.svg?style=for-the-badge&logo=Sass&logoColor=white" height="40"/>
 
-- Configure the top-level `parserOptions` property like this:
+<img alt="html5" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" height="40"/>
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+<img alt="React" src="https://shields.io/badge/react-black?logo=react&style=for-the-badge" height="40"/>
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
