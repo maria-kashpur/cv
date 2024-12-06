@@ -31,6 +31,6 @@ export const routes = [
   },
 ];
 
-const router = createBrowserRouter(routes);
+const router = createBrowserRouter(routes, {basename: "/cv/"});
 
 export default router;
