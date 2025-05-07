@@ -4,7 +4,8 @@ import graphQLImg from "./../assets/projects/graphQL.webp";
 import minesweeperImg from "./../assets/projects/minesweeper.webp";
 import selectorImg from "./../assets/projects/rs-css.webp";
 import asyncRaceImg from "./../assets/projects/race.webp";
-import christmasShopImg from "./../assets/projects/christmas-shop.webp"
+import christmasShopImg from "./../assets/projects/christmas-shop.webp";
+import reactCryptoApp from "./../assets/projects/react-crypto-app.webp"
 
 export interface ProjectData {
   id: string;
@@ -127,6 +128,21 @@ const PROJECTS: ProjectData[] = [
     img: christmasShopImg,
     github: "https://github.com/maria-kashpur/christmas-shop",
     deploy: "https://maria-kashpur.github.io/christmas-shop/",
+  },
+  {
+    id: "react-crypto-app",
+    title: {
+      en: "React crypto app",
+      ru: "React crypto app",
+    },
+    about: {
+      en: `The application was written for educational purposes based on the training video by Vladilen Minin (https://youtu.be/S4HOy6yTclU?si=qqwBbSvLLSMmID01).`,
+      ru: `Приложение написано в учебных целях на базе обучающего видео Владилена Минина (https://youtu.be/S4HOy6yTclU?si=qqwBbSvLLSMmID01).`,
+    },
+    tools: `Vite, TypeScript, SCSS, HTML5, React, Ant Design`,
+    img: reactCryptoApp,
+    github: "https://github.com/maria-kashpur/react-crypto-app",
+    deploy: "https://maria-kashpur.github.io/react-crypto-app/",
   },
 ];
 
